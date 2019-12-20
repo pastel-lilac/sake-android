@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.github.pastel_lilac.sake_android"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    testImplementation Libs.testJUnit
+    androidTestImplementation Libs.androidTestJUnit
+    androidTestImplementation Libs.androidTestEspresso
+
+    implementation Libs.appcompat
+    implementation Libs.constraintLayout
+    implementation Libs.androidCoreKtx
+
+    implementation Libs.okHttp
+    implementation Libs.okHttpLogging
+    implementation Libs.stetho
+    implementation Libs.retrofit
+    implementation Libs.moshi
+    implementation Libs.retrofitMoshiConverter
+    implementation Libs.koinAndroid
+    implementation Libs.koinViewModel
+    implementation Libs.koinAndroidxScope
+    implementation Libs.timber
+    implementation Libs.navigationFragment
+    implementation Libs.navigationUi
+    implementation Libs.room
+    implementation Libs.roomKtx
+    implementation Libs.threeTenAbp
+}
